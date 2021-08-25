@@ -5,21 +5,22 @@ export default  function FizzBuzzCount (): JSX.Element {
   const [state, setState] =
   useState<number>(0);
   
-  const [storedValuesFromCurrentRender, queueRerenderWithNewStoredValues] =
+  const [currentValues, newValues] =
   useState<number[]>([]);
 
-  const handleStoreCurrentCount = () => {
+  const count = () => {
     setState(state + 1);
-    queueRerenderWithNewStoredValues([
-      ...storedValuesFromCurrentRender,
+
+    newValues([
+      ...currentValues,
       state,
     ]);
 }
     return (
         <div>
           <h1>FizzBuzz</h1>
-          <p>Sequence: {storedValuesFromCurrentRender.join(", ")}</p>
-          <button onClick={handleStoreCurrentCount}>next</button>
+          <p>Sequence: {currentValues.join(", ")}</p>
+          <button onClick={count}>next</button>
         </div>
       );
 }
