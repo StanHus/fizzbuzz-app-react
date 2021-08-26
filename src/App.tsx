@@ -1,8 +1,7 @@
 import FizzBuzzCount from "./components/fizzBuzz";
 
 function App(): JSX.Element {
-  return <FizzBuzzCount />
-  ;
+  return <FizzBuzzCount />;
 }
 
 export default App;
